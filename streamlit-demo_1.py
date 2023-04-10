@@ -77,15 +77,11 @@ with col1:
     "Feature for x:",
     ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
     if genre != "Histogram":
-        y = st.selectbox("Feature for y:", featureset)
-        hue = st.selectbox("Feature for hue:", (featureset))
+        y = st.selectbox("Feature for y:", featureset, key="f2l")
+        hue = st.selectbox("Feature for hue:", (featureset), key="h2l")
     if genre == "Histogram": 
-        kde = st.selectbox("Do you want to add a kde?", (True, False), 
-        key="k1"
-        )
-        color1 = st.color_picker('Pick a color for Plot 1', 
-        key="c1"
-        )
+        kde = st.selectbox("Do you want to add a kde?", (True, False), key="k1")
+        color1 = st.color_picker('Pick a color for Plot 1', key="c1")
 #    if genre != "Histogram":
 #        y = st.radio("Feature for y:", featureset)
 #        hue2 = st.radio("Feature for hue:", (featureset))

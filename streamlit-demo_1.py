@@ -39,6 +39,7 @@ st.write(data)
 #Let the user choose graph, features, etc.
 st.subheader('Visualization')
 col1, col2 = st.columns(2)
+'''
 with col1:
     st.subheader('Choices')
     title = st.text_input('Enter a title for the chart')
@@ -64,8 +65,10 @@ with col2:
     #st.balloons()
     plt.title(title)
     st.pyplot(fig)
-    
+'''    
 with col1:
+st.subheader('Choices')
+title = st.text_input('Enter a title for the chart')
     genre = st.radio(
     "What type of plot do you want",
     ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))
@@ -74,8 +77,8 @@ with col1:
     "Feature for x:",
     ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
     if genre != "Histogram":
-        y = st.radio("Feature for y:", featureset)
-        hue2 = st.radio("Feature for hue:", (featureset))
+        y = st.selectbox("Feature for y:", featureset)
+        hue2 = st.selectbox("Feature for hue:", (featureset))
     if genre == "Histogram": 
         kde = st.selectbox("Do you want to add a kde?", (True, False), 
         #key="k1"
@@ -83,7 +86,16 @@ with col1:
         color1 = st.color_picker('Pick a color for Plot 1', 
         #key="c1"
         )
-    
+#    if genre != "Histogram":
+#        y = st.radio("Feature for y:", featureset)
+#        hue2 = st.radio("Feature for hue:", (featureset))
+#    if genre == "Histogram": 
+#        kde = st.selectbox("Do you want to add a kde?", (True, False), 
+#        #key="k1"
+#        )
+#        color1 = st.color_picker('Pick a color for Plot 1', 
+#        #key="c1"
+#        )
 with col2:
     fig = plt.figure(figsize=(7, 5))
     if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color1)

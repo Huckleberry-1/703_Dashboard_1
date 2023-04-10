@@ -39,33 +39,7 @@ st.write(data)
 #Let the user choose graph, features, etc.
 st.subheader('Visualization')
 col1, col2 = st.columns(2)
-'''
-with col1:
-    st.subheader('Choices')
-    title = st.text_input('Enter a title for the chart')
-    kind1 = st.selectbox('Pick plot for left side', graphset, key="pl")
-    #kind1 = st.selectbox('Pick plot for left side', graphset)
-    x = st.selectbox("Feature for x:", featureset, key="f1l")
-    if kind1 != "Histogram":
-        y = st.selectbox("Feature for y:", featureset, key="f2l")
-        hue = st.selectbox("Feature for hue:", (featureset), key="h2l")
-    if kind1 == "Histogram": 
-        kde = st.selectbox("Do you want to add a kde?", (True, False), key="k1")
-        color1 = st.color_picker('Pick a color for Plot 1', key="c1")
-#Then view the graph
-with col2:
-    fig = plt.figure(figsize=(7, 5))
-    if kind1 == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color1)
-    if kind1 == "Box Plot": sns.boxplot(data = data, x = x, y = y, hue = hue)
-    if kind1 == "Enhanced Box Plot": sns.boxenplot(data = data, x = x, y = y, hue = hue)
-    if kind1 == "Strip Plot": sns.stripplot(data = data, x = x, y = y, hue = hue)  
-    if kind1 == "Violin Plot": sns.violinplot(data = data, x = x, y = y, hue = hue)
-    if kind1 == "Swarm Plot": sns.swarmplot(data = data, x = x, y = y, hue = hue)
-#User can input a title for the graph
-    #st.balloons()
-    plt.title(title)
-    st.pyplot(fig)
-'''    
+
 with col1:
     st.subheader('Choices')
     title = st.text_input('Enter a title for the chart')
@@ -83,13 +57,14 @@ with col1:
 #    if genre == "Histogram": 
 #        kde = st.selectbox("Do you want to add a kde?", (True, False), key="k1")
 #        color = st.color_picker('Pick a color for Plot 1', key="c1")
+
+with col2:
     if genre != "Histogram":
         y = st.radio("Feature for y:", ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
         hue = st.radio("Feature for hue:", ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
     if genre == "Histogram": 
         kde = st.radio("Do you want to add a kde?", ('True', 'False'), key="k1")
         color = st.color_picker('Pick a color for Plot 1', key="c1")
-with col2:
     fig = plt.figure(figsize=(7, 5))
     if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color)
     if genre == "Box Plot": sns.boxplot(data = data, x = x, y = y, hue = hue)

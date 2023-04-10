@@ -78,7 +78,7 @@ with col1:
     ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
     if genre != "Histogram":
         y = st.selectbox("Feature for y:", featureset)
-        hue2 = st.selectbox("Feature for hue:", (featureset))
+        hue = st.selectbox("Feature for hue:", (featureset))
     if genre == "Histogram": 
         kde = st.selectbox("Do you want to add a kde?", (True, False), 
         #key="k1"

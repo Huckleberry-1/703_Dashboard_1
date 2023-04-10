@@ -69,7 +69,7 @@ with col1:
     genre = st.radio(
     "What type of plot do you want",
     ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))
-with col2
+with col2:
     fig = plt.figure(figsize=(7, 5))
     if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color1)
     if genre == "Box Plot": sns.boxplot(data = data, x = x, y = y, hue = hue)

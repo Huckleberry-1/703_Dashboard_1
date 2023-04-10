@@ -67,8 +67,8 @@ with col2:
     st.pyplot(fig)
 '''    
 with col1:
-st.subheader('Choices')
-title = st.text_input('Enter a title for the chart')
+    st.subheader('Choices')
+    title = st.text_input('Enter a title for the chart')
     genre = st.radio(
     "What type of plot do you want",
     ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))

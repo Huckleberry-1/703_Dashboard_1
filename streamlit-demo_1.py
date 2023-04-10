@@ -26,9 +26,12 @@ data.rename(columns =
     {"flipper_length_mm": "Flipper Length",  
     "bill_length_mm":"Bill Length",
     "bill_depth_mm":"Bill Depth",
-    "body_mass_g":"Body Mass"},
+    "body_mass_g":"Body Mass",
+    "island":"Island",
+    "sex":"Sex",
+    "species":"Species"},
     inplace = True)
-featureset = ['Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'island', 'sex', 'species']
+featureset = ['Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'sex', 'Species']
 graphset = ["Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"]
 
 st.set_page_config(page_title="703_Demo", page_icon="🧊", layout="wide", initial_sidebar_state="expanded", menu_items={'Get Help': 'https://github.com/GMU-instructor/Teaching_public','Report a bug': "https://github.com/GMU-instructor/Teaching_public",'About': "# This is a header. This is an *extremely* cool app!"})
@@ -56,7 +59,7 @@ with col1:
     
     #x = st.radio(
     #"Feature for x:",
-    #('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'island', 'sex', 'species'))
+    #('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'sex', 'Species'))
     #x = featureset1
 #    if genre != "Histogram":
 #        y = st.selectbox("Feature for y:", featureset1, key="f2l")
@@ -65,23 +68,23 @@ with col1:
 #        kde = st.selectbox("Do you want to add a kde?", (True, False), key="k1")
 #        color = st.color_picker('Pick a color for Plot 1', key="c1")
     if genre != "Histogram":
-        #y = st.radio("Feature for y:", ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'Sex', 'species'))
-        #hue = st.radio("Feature for hue:", ('island', 'sex', 'species'))
+        #y = st.radio("Feature for y:", ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'Sex', 'Species'))
+        #hue = st.radio("Feature for hue:", ('Island', 'sex', 'Species'))
         x = st.radio(
         "Feature for x:",
-        ('island', 'sex', 'species'))
+        ('Island', 'sex', 'Species'))
     if genre == "Histogram": 
         #kde = st.radio("Do you want to add a kde?", ('True', 'False'), key="k1")
         x = st.radio(
         "Feature for x:",
-        ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'island', 'sex', 'species'))
+        ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'sex', 'Species'))
         #kde = st.radio("Do you want to add a kde?", ('True', 'False'))
         #color = st.color_picker('Pick a color for Plot 1', key="c1")
 with col2:
     if genre != "Histogram":
-        #y = st.radio("Feature for y:", ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'island', 'sex', 'species'))
+        #y = st.radio("Feature for y:", ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'sex', 'Species'))
         y = st.radio("Feature for y:", ('Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass'))
-        hue = st.radio("Feature for hue:", ('island', 'sex', 'species'))
+        hue = st.radio("Feature for hue:", ('Island', 'sex', 'Species'))
     if genre == "Histogram": 
         #kde = st.radio("Do you want to add a kde?", ('True', 'False'), key="k1")
         #kde = st.radio("Do you want to add a kde?", ('True', 'False'))

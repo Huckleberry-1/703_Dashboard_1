@@ -73,5 +73,6 @@ with col2:
     if genre == "Strip Plot": sns.stripplot(data = data, x = x, y = y, hue = hue)  
     if genre == "Violin Plot": sns.violinplot(data = data, x = x, y = y, hue = hue)
     if genre == "Swarm Plot": sns.swarmplot(data = data, x = x, y = y, hue = hue)
+with st.container():    
     plt.title(title)
     st.pyplot(fig)

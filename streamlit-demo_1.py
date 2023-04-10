@@ -10,6 +10,17 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
 
+st.set_page_config(
+    page_title="703_Demo",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://github.com/GMU-instructor/Teaching_public',
+        'Report a bug': "https://github.com/GMU-instructor/Teaching_public",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+
 #Load and clean data
 data = sns.load_dataset('penguins')
 data['bill_length_mm'].fillna(data['bill_length_mm'].mean(), inplace=True)

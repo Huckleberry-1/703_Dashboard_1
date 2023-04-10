@@ -76,6 +76,7 @@ with col1:
     featureset1 = st.radio(
     "Feature for x:",
     ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
+    x = featureset1
 #    if genre != "Histogram":
 #        y = st.selectbox("Feature for y:", featureset1, key="f2l")
 #        hue = st.selectbox("Feature for hue:", (featureset1), key="h2l")

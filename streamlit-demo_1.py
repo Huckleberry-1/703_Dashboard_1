@@ -85,6 +85,7 @@ with col2:
     if genre == "Histogram": 
         #kde = st.radio("Do you want to add a kde?", ('True', 'False'), key="k1")
         #kde = st.radio("Do you want to add a kde?", ('True', 'False'))
+        kde = kde
         color = st.color_picker('Pick a color for Plot 1', key="c1")
     fig = plt.figure(figsize=(7, 5))
     if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color)

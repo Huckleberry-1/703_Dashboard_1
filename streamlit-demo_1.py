@@ -42,8 +42,8 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader('Choices')
     title = st.text_input('Enter a title for the chart')
-    #kind1 = st.selectbox('Pick plot for left side', graphset, key="pl")
-    kind1 = st.selectbox('Pick plot for left side', graphset)
+    kind1 = st.selectbox('Pick plot for left side', graphset, key="pl")
+    #kind1 = st.selectbox('Pick plot for left side', graphset)
     x = st.selectbox("Feature for x:", featureset, key="f1l")
     if kind1 != "Histogram":
         y = st.selectbox("Feature for y:", featureset, key="f2l")
@@ -61,15 +61,21 @@ with col2:
     if kind1 == "Violin Plot": sns.violinplot(data = data, x = x, y = y, hue = hue)
     if kind1 == "Swarm Plot": sns.swarmplot(data = data, x = x, y = y, hue = hue)
 #User can input a title for the graph
-    st.balloons()
+    #st.balloons()
     plt.title(title)
     st.pyplot(fig)
     
-genre = st.radio(
-    "What\'s your favorite movie genre",
-    ('Comedy', 'Drama', 'Documentary'))
-
-if genre == 'Comedy':
-    st.write('You selected comedy.')
-else:
-    st.write("You didn\'t select comedy.")
+with col1:
+    genre = st.radio(
+    "What type of plot do you want",
+    ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))
+with col2
+    fig = plt.figure(figsize=(7, 5))
+    if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color1)
+    if genre == "Box Plot": sns.boxplot(data = data, x = x, y = y, hue = hue)
+    if genre == "Enhanced Box Plot": sns.boxenplot(data = data, x = x, y = y, hue = hue)
+    if genre == "Strip Plot": sns.stripplot(data = data, x = x, y = y, hue = hue)  
+    if genre == "Violin Plot": sns.violinplot(data = data, x = x, y = y, hue = hue)
+    if genre == "Swarm Plot": sns.swarmplot(data = data, x = x, y = y, hue = hue)
+    plt.title(title)
+    st.pyplot(fig)

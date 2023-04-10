@@ -91,7 +91,7 @@ with col1:
         color = st.color_picker('Pick a color for Plot 1', key="c1")
 with col2:
     fig = plt.figure(figsize=(7, 5))
-    if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color1)
+    if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color)
     if genre == "Box Plot": sns.boxplot(data = data, x = x, y = y, hue = hue)
     if genre == "Enhanced Box Plot": sns.boxenplot(data = data, x = x, y = y, hue = hue)
     if genre == "Strip Plot": sns.stripplot(data = data, x = x, y = y, hue = hue)  

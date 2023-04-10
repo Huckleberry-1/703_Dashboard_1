@@ -42,7 +42,8 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader('Choices')
     title = st.text_input('Enter a title for the chart')
-    kind1 = st.selectbox('Pick plot for left side', graphset, key="pl")
+    #kind1 = st.selectbox('Pick plot for left side', graphset, key="pl")
+    kind1 = st.selectbox('Pick plot for left side', graphset)
     x = st.selectbox("Feature for x:", featureset, key="f1l")
     if kind1 != "Histogram":
         y = st.selectbox("Feature for y:", featureset, key="f2l")

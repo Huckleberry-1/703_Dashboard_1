@@ -40,10 +40,11 @@ st.write(data)
 st.subheader('Visualization')
 with st.container():
     title = st.text_input('Enter a title for the chart')
+    st.subheader('Choices')
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader('Choices')
+    #st.subheader('Choices')
     #title = st.text_input('Enter a title for the chart')
     genre = st.radio(
     "What type of plot do you want",

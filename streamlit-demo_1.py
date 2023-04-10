@@ -69,6 +69,17 @@ with col1:
     genre = st.radio(
     "What type of plot do you want",
     ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))
+    
+    featureset1 = st.radio(
+    "Feature for x:",
+    ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
+    if genre != "Histogram":
+        y = st.radio("Feature for y:", featureset, key="f2l")
+        hue = st.radio("Feature for hue:", (featureset), key="h2l")
+    if genre == "Histogram": 
+        kde = st.selectbox("Do you want to add a kde?", (True, False), key="k1")
+        color1 = st.color_picker('Pick a color for Plot 1', key="c1")
+    
 with col2:
     fig = plt.figure(figsize=(7, 5))
     if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color1)

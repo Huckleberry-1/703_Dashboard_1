@@ -61,9 +61,10 @@ with col1:
 with col2:
     if genre != "Histogram":
         y = st.radio("Feature for y:", ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
-        hue = st.radio("Feature for hue:", ('body mass', 'island', 'sex', 'species'))
+        hue = st.radio("Feature for hue:", ('island', 'sex', 'species'))
     if genre == "Histogram": 
-        kde = st.radio("Do you want to add a kde?", ('True', 'False'), key="k1")
+        #kde = st.radio("Do you want to add a kde?", ('True', 'False'), key="k1")
+        kde = st.radio("Do you want to add a kde?", ('True', 'False'))
         color = st.color_picker('Pick a color for Plot 1', key="c1")
     fig = plt.figure(figsize=(7, 5))
     if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color)

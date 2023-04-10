@@ -38,11 +38,13 @@ st.write(data)
 
 #Let the user choose graph, features, etc.
 st.subheader('Visualization')
+with st.container():
+    title = st.text_input('Enter a title for the chart')
 col1, col2 = st.columns(2)
 
 with col1:
     st.subheader('Choices')
-    title = st.text_input('Enter a title for the chart')
+    #title = st.text_input('Enter a title for the chart')
     genre = st.radio(
     "What type of plot do you want",
     ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))

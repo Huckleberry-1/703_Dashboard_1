@@ -60,5 +60,6 @@ with col2:
     if kind1 == "Violin Plot": sns.violinplot(data = data, x = x, y = y, hue = hue)
     if kind1 == "Swarm Plot": sns.swarmplot(data = data, x = x, y = y, hue = hue)
 #User can input a title for the graph
+    st.balloons()
     plt.title(title)
     st.pyplot(fig)

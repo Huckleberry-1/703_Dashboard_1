@@ -73,10 +73,10 @@ with col1:
     "What type of plot do you want",
     ("Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"))
     
-    featureset1 = st.radio(
+    x = st.radio(
     "Feature for x:",
     ('flipper length', 'bill length', 'bill depth', 'body mass', 'island', 'sex', 'species'))
-    x = featureset1
+    #x = featureset1
 #    if genre != "Histogram":
 #        y = st.selectbox("Feature for y:", featureset1, key="f2l")
 #        hue = st.selectbox("Feature for hue:", (featureset1), key="h2l")

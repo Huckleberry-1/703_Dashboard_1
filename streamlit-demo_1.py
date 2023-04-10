@@ -81,10 +81,10 @@ with col1:
         hue = st.selectbox("Feature for hue:", (featureset))
     if genre == "Histogram": 
         kde = st.selectbox("Do you want to add a kde?", (True, False), 
-        #key="k1"
+        key="k1"
         )
         color1 = st.color_picker('Pick a color for Plot 1', 
-        #key="c1"
+        key="c1"
         )
 #    if genre != "Histogram":
 #        y = st.radio("Feature for y:", featureset)

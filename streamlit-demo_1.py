@@ -127,6 +127,6 @@ with st.container():
 with st.container():
     df1 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.77167, -64.075],columns=['lat', 'lon'])
     df2 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.733333, -64.233333],columns=['lat', 'lon'])
-    df1.append(df2)
+    df3 = pd.concat([df1, df2], axis=0)
 
-    st.map(df1)
+    st.map(df3)

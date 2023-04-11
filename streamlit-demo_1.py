@@ -127,6 +127,7 @@ with st.container():
 with st.container():
     df1 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.77167, -64.075],columns=['lat', 'lon'])
     df2 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.733333, -64.233333],columns=['lat', 'lon'])
-    df3 = pd.concat([df1, df2], axis=0)
+    df3 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-65.410155, -65.359285],columns=['lat', 'lon'])
+    df4 = pd.concat([df1, df2, df3], axis=0)
 
-    st.map(df3)
+    st.map(df4)

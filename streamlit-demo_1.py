@@ -36,7 +36,7 @@ data.rename(columns =
 featureset = ['Flipper Length', 'Bill Length', 'Bill Depth', 'Body Mass', 'Island', 'Sex', 'Species']
 graphset = ["Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin Plot", "Swarm Plot"]
 
-st.set_page_config(page_title="703_Demo", page_icon="🧊", layout="wide", initial_sidebar_state="expanded", menu_items={'Get Help': 'https://github.com/GMU-instructor/Teaching_public','Report a bug': "https://github.com/GMU-instructor/Teaching_public",'About': "# This is a header. This is an *extremely* cool app!"})
+st.set_page_config(page_title="703_Demo", page_icon="🧊", layout="wide", initial_sidebar_state="expanded", menu_items={'Get Help': 'https://github.com/GMU-instructor/Teaching_public','Report a bug': "https://github.com/GMU-instructor/Teaching_public",'About': "# For CSI 703. This is an *extremely* cool app!"})
 
 #Give our dashboard a title
 st.title('Customer dashboard')
@@ -93,7 +93,7 @@ with col2:
         #kde = kde
         color = st.color_picker('Pick a color for Plot 1', key="c1")
     fig = plt.figure(figsize=(7, 5))
-    if genre == "Histogram": sns.histplot(data = data, x = x, color = color)
+    if genre == "Histogram": sns.histplot(data = data, x = x, kde = 'True', color = color)
     #if genre == "Histogram": sns.histplot(data = data, x = x, kde = kde, color = color)
     if genre == "Box Plot": sns.boxplot(data = data, x = x, y = y, hue = hue)
     if genre == "Enhanced Box Plot": sns.boxenplot(data = data, x = x, y = y, hue = hue)
@@ -124,3 +124,9 @@ with st.container():
 # Plot!
     st.plotly_chart(fig, use_container_width=True)
 
+with st.container():
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+
+st.map(df)

@@ -124,10 +124,22 @@ with st.container():
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
 
-with st.container():
+col1, col2, col3 = st.columns(3)
+with col1
     df1 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.77167, -64.075],columns=['lat', 'lon'])
+    st.map(df1)
+with col2
     df2 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.733333, -64.233333],columns=['lat', 'lon'])
+    st.map(df2)
+with col3
     df3 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-65.410155, -65.359285],columns=['lat', 'lon'])
-    df4 = pd.concat([df1, df2, df3], axis=0)
+    st.map(df3)
+    
 
-    st.map(df4)
+
+#with st.container():
+#    df1 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.77167, -64.075],columns=['lat', 'lon'])
+#    df2 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.733333, -64.233333],columns=['lat', 'lon'])
+#    df3 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-65.410155, -65.359285],columns=['lat', 'lon'])
+#    df4 = pd.concat([df1, df2, df3], axis=0)
+#   st.map(df4)

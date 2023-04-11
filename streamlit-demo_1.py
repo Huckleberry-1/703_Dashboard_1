@@ -105,7 +105,7 @@ with st.container():
     st.pyplot(fig)
 
 with st.container():
-# Add histogram data
+    # Add histogram data
     AB = [3400,3600,3800,3950,3800,3800,3550,3200,3150,3950,3500,4300,3450,4050,2900,3700,3550,3800,2850,3750,3150,4400,3600,4050,2850,3950,3350,4100,3725,4725,3075,4250,2925,3550,3750,3900,3175,4775,3825,4600,3200,4275,3900,4075]
     AD = [3250,3900,3300,3900,3325,4150,3950,3550,3300,4650,3150,3900,3100,4400,3000,4600,3425,2975,3450,4150,3350,3550,3800,3500,3950,3600,3550,4300,3400,4450,3300,4300,3700,4350,2900,4100,3500,4475,3425,3900,3175,3975,3400,4250,3400,3475,3050,3725,3000,3650,4250,3475,3450,3750,3700,4000]
     AT = [3750,3800,3250,4202,3450,3650,3625,4675,3475,4250,3300,3700,3200,3800,4400,3700,3450,4500,3325,4200,3050,4450,3600,3900,3550,4150,3700,4250,3700,3900,3550,4000,3200,4700,3800,4200,2900,3775,3350,3325,3150,3500,3450,3875,3050,4000,3275,4300,3050,4000,3325,3500]
@@ -113,20 +113,20 @@ with st.container():
     #x2 = np.random.randn(200)
     #x3 = np.random.randn(200) + 2
 
-# Group data together
+    # Group data together
     hist_data = [AB, AD, AT]
 
     group_labels = ['AB', 'AD', 'AT']
 
-# Create distplot with custom bin_size
+    # Create distplot with custom bin_size
     fig = ff.create_distplot(hist_data, group_labels, bin_size=[10, 10, 10])
 
-# Plot!
+    # Plot!
     st.plotly_chart(fig, use_container_width=True)
 
 with st.container():
-df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
+    df = pd.DataFrame(
+        np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+        columns=['lat', 'lon'])
 
-st.map(df)
+    st.map(df)

@@ -108,12 +108,15 @@ with st.container():
 
 col1, col2, col3 = st.columns(3)
 with col1:
+    st.subheader('Torgersen Island')
     df1 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.77167, -64.075],columns=['lat', 'lon'])
     st.map(df1,zoom=10)
 with col2:
+    st.subheader('Dream Island')
     df2 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.733333, -64.233333],columns=['lat', 'lon'])
     st.map(df2,zoom=10)
 with col3:
+    st.subheader('Biscoe Islands')
     df3 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-65.410155, -65.359285],columns=['lat', 'lon'])
     st.map(df3,zoom=10)
     

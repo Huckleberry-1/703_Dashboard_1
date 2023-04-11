@@ -103,7 +103,7 @@ with st.container():
     plt.title(title)
     st.pyplot(fig)
 
-with st.container()
+with st.container():
 # Add histogram data
     x1 = np.random.randn(200) - 2
     x2 = np.random.randn(200)

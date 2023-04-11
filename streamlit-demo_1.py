@@ -126,7 +126,7 @@ with st.container():
 
 with st.container():
     df = pd.DataFrame(
-        np.random.randn(50, 2) / [400, 400] + [-64.76667, -64.065],
+        np.random.randn(50, 2) / [400, 400] + [-64.86667, -64.075],
         columns=['lat', 'lon'])
 
     st.map(df)

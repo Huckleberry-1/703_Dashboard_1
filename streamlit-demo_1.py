@@ -125,8 +125,8 @@ with st.container():
     st.plotly_chart(fig, use_container_width=True)
 
 with st.container():
-    df = pd.DataFrame(
-        np.random.randn(50, 2) / [400, 400] + [-64.77667, -64.075],
-        columns=['lat', 'lon'])
+    df1 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.77167, -64.075],columns=['lat', 'lon'])
+    df2 = pd.DataFrame(np.random.randn(30, 2) / [400, 400] + [-64.733333, -64.233333],columns=['lat', 'lon'])
+    df1.append(df2)
 
-    st.map(df)
+    st.map(df1)

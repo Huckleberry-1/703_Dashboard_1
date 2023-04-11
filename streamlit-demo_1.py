@@ -1,6 +1,7 @@
 #Import libraries
 #from re import X
 import streamlit as st
+import scipy
 import seaborn as sns
 import matplotlib
 import matplotlib.pyplot as plt

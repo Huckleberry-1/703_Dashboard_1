@@ -39,7 +39,7 @@ graphset = ["Histogram", "Box Plot", "Enhanced Box Plot", "Strip Plot", "Violin 
 st.set_page_config(page_title="703_Demo", page_icon="🧊", layout="wide", initial_sidebar_state="expanded", menu_items={'Get Help': 'https://github.com/GMU-instructor/Teaching_public','Report a bug': "https://github.com/GMU-instructor/Teaching_public",'About': "# For CSI 703. This is an *extremely* cool app!"})
 
 #Give our dashboard a title
-st.title('Customer dashboard')
+st.title('Visualization dashboard')
 
 #Show the raw data
 st.subheader('Raw data')
